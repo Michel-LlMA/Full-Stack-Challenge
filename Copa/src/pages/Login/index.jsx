@@ -12,7 +12,7 @@ export const Login = () => {
       <main className="container max-w-xl p-4">
         <div className="p-4 flex space-x-4 items-center">
           <a href="/">
-          <Icon name="arrowLeft" className="h-6"/>
+          <Icon name="back" className="h-6"/>
           </a>
           <h2 className="text-xl font-bold">Entre na sua conta</h2>
         </div>
@@ -30,12 +30,12 @@ export const Login = () => {
             label="Sua senha"
             placeholder="Digite sua senha"
           />
-          <button
-            href="/signup"
+          <a
+            href="/dashboard"
             className="w-full text-center text-white bg-red-500 bg-white px-6 py-3 rounded-xl"
           >
             Entrar
-          </button>
+          </a>
         </form>
       </main>
     </div>
