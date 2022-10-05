@@ -5,6 +5,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+    },
     fontSize: {
       xs: ['12px', '16px'],
       sm: ['14px', '18px'],
@@ -27,8 +30,8 @@ module.exports = {
         gray: {
           300: '#B1B4BD',
           500: '#91949D',
-          700: '#696C74'
-        }
+          700: '#696C74',
+        },
       }
     },
   },
