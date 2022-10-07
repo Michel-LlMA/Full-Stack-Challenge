@@ -4,6 +4,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {},
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "author": {
     "name": "Michel Lima",
     "email": "michellima.dev@gmail.com"
