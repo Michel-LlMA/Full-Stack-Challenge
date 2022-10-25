@@ -51,5 +51,6 @@ export const login = async ctx => {
     expiresIn: "7d"
    }, process.env.JWT_SECRET)
 
-   ctx.body = result
+   ctx.body = result,
+   accessToken
 }
