@@ -1,10 +1,25 @@
+import { useLocalStorage } from 'react-use'
+import { Navigate } from 'react-router-dom'
+
 import { Icon, Card, DateSelect } from '~/components'
 
-export const Profile = () => (
+export const Profile = () => {
+    const [auth, setAuth] = useLocalStorage ('auth', {})
+
+    const logout = () => setAuth ({})
+
+    if (!auth?.user?.id) {
+        return <Navigate to="/" repalce={true} />
+    }
+
+    return (
     <>
         <header className="bg-red-500 text-white">
             <div className="container max-w-3xl flex justify-between p-4">
-                <img src="/imgs/logo-red.svg" className="w-28 md:w-40"/> 
+                <img src="/imgs/logo-red.svg" className="w-28 md:w-40"/>
+                <div onClick={logout} className="p-2 cursor-pointer">
+                    Sair
+                </div>
             </div>
         </header>
 
@@ -47,3 +62,4 @@ export const Profile = () => (
         </main>
     </>
 )
+    }

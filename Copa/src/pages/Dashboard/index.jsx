@@ -1,6 +1,16 @@
+import { Navigate } from 'react-router-dom'
+import { useLocalStorage } from 'react-use'
+
 import { Icon, Card, DateSelect } from '~/components'
 
-export const Dashboard = () => (
+export const Dashboard = () => {
+    const [auth] = useLocalStorage ('auth', {})
+
+    if (!auth?.user?.id) {
+        return <Navigate to="/" repalce={true} />
+    }
+
+    return (
     <>
         <header className="bg-red-500 text-white">
             <div className="container max-w-3xl flex justify-between p-4">
@@ -46,3 +56,4 @@ export const Dashboard = () => (
         </main>
     </>
 )
+    }
